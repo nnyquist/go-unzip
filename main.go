@@ -11,7 +11,8 @@ import (
 
 func main() {
 	destination := "./"
-	archive, err := zip.OpenReader("dynamic_loading.zip")
+	compressedFile := os.Args[1]
+	archive, err := zip.OpenReader(compressedFile)
 	if err != nil {
 		log.Fatal(err)
 	}
